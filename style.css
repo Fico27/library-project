@@ -14,18 +14,22 @@ html, body {
     flex-direction: column;
     width: 80vw;
     height: 80vh;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
 .bookdisplay {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 80%;
     height: 80%;
     border: 2px solid black;
 }
 
 .bookcard{
-    height: 100px;
-    width: 100px;
+    height: 30%;
+    width: 30%;
     border: 3px solid black;
+
 }
