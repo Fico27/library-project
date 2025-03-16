@@ -55,9 +55,28 @@ function addBookToLibrary(title, author, genre, pages) {
 
 function loadBooks() {
     myLibrary.map((book) => {
+
+        // Creates the book card
         const createBookCard = document.createElement("div");
         createBookCard.className = "bookcard";
         bookDisplay.appendChild(createBookCard);
+        
+        // populates the informatino onto each card.
+
+        const createTitle = document.createElement("h3")
+        createTitle.innerHTML= book.title
+        const createAuthor = document.createElement("p")
+        createAuthor.innerHTML= book.author
+        const createpages = document.createElement("p")
+        createpages.innerHTML= book.pages
+        const createGenre = document.createElement("p")
+        createGenre.innerHTML= book.genre
+
+        createBookCard.appendChild(createTitle)
+        createBookCard.appendChild(createAuthor)
+        createBookCard.appendChild(createpages)
+        createBookCard.appendChild(createGenre)
+
     })
 }
 
