@@ -25,8 +25,14 @@ const book3 = {
 }
 
 
+// Test to create new bookcard ---- Works
+const bookDisplay = document.querySelector(".bookdisplay");
+// const createBookCard = document.createElement("div");
+// createBookCard.className = "bookcard";
+// bookDisplay.appendChild(createBookCard);
 
 const myLibrary = [book1,book2, book3];
+
 
 
 
@@ -47,5 +53,10 @@ function addBookToLibrary(title, author, genre, pages) {
 
 }
 
+function loadBooks(){
+    const loadingBooks = myLibrary.map((book) => {
+
+    })
+}
 
 
