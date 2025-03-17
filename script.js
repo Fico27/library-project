@@ -62,9 +62,9 @@ form.addEventListener("submit", (e) => {
 
     addBookToLibrary(addBookTitle.value, addBookAuthor.value, addBookGenre.value, addBookPages.value);
 
-    resetDisplay()
-    loadBooks()
-    form.reset()
+    resetDisplay();
+    loadBooks();
+    form.reset();
 })
 
 
