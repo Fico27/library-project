@@ -8,15 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="loadBooks()">
 
     <div class="maincontainer">
 
         <h1>Plex-Bary</h1>
         <h3>A Book Version of Plex!</h3>
 
+        <button class="calltoform" onclick="showBookForm()">Add Book</button>
+        
         <div class="formcontainer">
-            <form action=""></form>
+            <form action="">
+
+                <div>
+                    <label for="title">Title:</label>
+  
+                    <input type="text" id="title" name="book_title" required>
+                </div>
+
+                <div>
+                    <label for="author">Author:</label>
+  
+                    <input type="text" id="author" name="book_author" required>
+                </div>
+
+                <div>
+                    <label for="pages">Number of Pages:</label>
+  
+                    <input type="number" id="pages" name="book_pages">
+                </div>
+
+                <div>
+                    <label for="genre">Genre:</label>
+  
+                    <input type="text" id="genre" name="book_genre">
+                </div>
+
+                <button type="submit" >Add Book to Collection</button>
+            </form>
         </div>
 
 

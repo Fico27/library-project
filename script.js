@@ -27,11 +27,55 @@ const book3 = {
 
 // Test to create new bookcard ---- Works
 const bookDisplay = document.querySelector(".bookdisplay");
-// const createBookCard = document.createElement("div");
-// createBookCard.className = "bookcard";
-// bookDisplay.appendChild(createBookCard);
+const addBookButton = document.querySelector(".calltoform")
+let form = document.querySelector("form");
+let formDiv = document.querySelector(".formcontainer");
+const myLibrary = [book1, book2, book3, book1, book2, book3,book1, book2, book3, book1, book2, book3];
 
-const myLibrary = [book1, book2, book3, book1, book2, book3];
+
+
+function showBookForm(){
+
+    // if (form.style.display === "none"){
+    //     form.style.display = "block";
+    // } else {
+    //     form.style.display = "none";
+    // }
+
+
+    if (formDiv.style.display === "none"){
+        formDiv.style.display = "block";
+    } else {
+        formDiv.style.display = "none";
+    }
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const addBookTitle = document.querySelector("#title");
+    const addBookAuthor = document.querySelector("#author");
+    const addBookPages = document.querySelector("#pages");
+    const addBookGenre = document.querySelector("#genre");
+
+    addBookToLibrary(addBookTitle.value, addBookAuthor.value, addBookGenre.value, addBookPages.value);
+    console.table(myLibrary)
+})
+
+
+
+// function captureFormInfo(){
+//     preventDefault();
+
+//     const addBookTitle = document.querySelector("#title");
+//     const addBookAuthor = document.querySelector("#author");
+//     const addBookPages = document.querySelector("#pages");
+//     const addBookGenre = document.querySelector("#genre");
+//     addBookToLibrary(addBookTitle.value, addBookAuthor.value, addBookGenre.value, addBookPages.value)
+//     console.table(myLibrary)
+// }
+
+
 
 
 
