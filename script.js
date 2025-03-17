@@ -35,14 +35,6 @@ const myLibrary = [book1, book2, book3, book1, book2, book3,book1, book2, book3,
 
 
 function showBookForm(){
-
-    // if (form.style.display === "none"){
-    //     form.style.display = "block";
-    // } else {
-    //     form.style.display = "none";
-    // }
-
-
     if (formDiv.style.display === "none"){
         formDiv.style.display = "block";
     } else {
@@ -59,25 +51,9 @@ form.addEventListener("submit", (e) => {
     const addBookGenre = document.querySelector("#genre");
 
     addBookToLibrary(addBookTitle.value, addBookAuthor.value, addBookGenre.value, addBookPages.value);
-    console.table(myLibrary)
+    loadBooks();
+    form.reset()
 })
-
-
-
-// function captureFormInfo(){
-//     preventDefault();
-
-//     const addBookTitle = document.querySelector("#title");
-//     const addBookAuthor = document.querySelector("#author");
-//     const addBookPages = document.querySelector("#pages");
-//     const addBookGenre = document.querySelector("#genre");
-//     addBookToLibrary(addBookTitle.value, addBookAuthor.value, addBookGenre.value, addBookPages.value)
-//     console.table(myLibrary)
-// }
-
-
-
-
 
 
 // the constructor
@@ -97,6 +73,8 @@ function addBookToLibrary(title, author, genre, pages) {
 
 }
 
+
+// Gets called on body load
 function loadBooks() {
     myLibrary.map((book) => {
 
