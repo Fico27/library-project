@@ -1,15 +1,22 @@
-html, body {
+html,
+body {
     margin: 0;
+    background-color: #AA767C;
+    color: #63474D
+}
+button{
+    background-color: #FFA686;
+    font-weight: bold;
 }
 
-.maincontainer{
+.maincontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.bookshelf{
+.bookshelf {
     display: flex;
     flex-direction: column;
     /* width: 80vw;
@@ -24,10 +31,10 @@ html, body {
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
-    
+
 }
 
-.bookcard{
+.bookcard {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -37,43 +44,53 @@ html, body {
     margin: 10px 10px;
     padding: 10px;
     align-items: center;
+    background-color: #FEC196;
 }
-.bookcard button{
+.bookcard:hover{
+    box-shadow: 1px 1px 5px 1px #63474D;
+    
+}
+
+.bookcard button {
     width: 50%;
     padding: 10px 0;
 }
 
-.bookcard button:last-child{
-margin-top: 10px;
+.bookcard button:last-child {
+    margin-top: 10px;
 }
 
-.formcontainer{
+.formcontainer {
     display: none;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     width: 300px;
     border: 2px solid black;
     padding: 20px 20px;
     align-items: center;
-   
+    margin-top: 15px;
+    box-shadow: 5px 5px 50px 1px silver;
+    background-color: #FEC196;
 }
 
-form label{
+form label {
     padding-top: 10px;
     font-weight: bold;
 }
+
 form button {
+    padding: 10px;
     margin-top: 10px;
 }
 
-label{
+label {
     display: block;
 }
 
-.calltoform{
+.calltoform {
     padding: 10px 30px;
     border: 2px solid black;
 }
