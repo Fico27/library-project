@@ -30,7 +30,7 @@ const bookDisplay = document.querySelector(".bookdisplay");
 const addBookButton = document.querySelector(".calltoform")
 let form = document.querySelector("form");
 let formDiv = document.querySelector(".formcontainer");
-const myLibrary = [book1, book2, book3];
+let myLibrary = [book1, book2, book3];
 
 
 
@@ -118,6 +118,8 @@ function loadBooks() {
 
         //Removes each book
         createRemoveButton.addEventListener('click', () => {
+            
+            myLibrary = myLibrary.filter(b => b.id !== book.id);
             bookDisplay.removeChild(createBookCard)
         });
 
