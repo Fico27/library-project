@@ -43,9 +43,13 @@ function resetDisplay() {
 function showBookForm() {
     if (formDiv.style.display === "none") {
         formDiv.style.display = "block";
+        addBookButton.innerHTML= "Close Form"
     } else {
+        
         formDiv.style.display = "none";
+        addBookButton.innerHTML= "Add Book"
     }
+    
 }
 
 form.addEventListener("submit", (e) => {
