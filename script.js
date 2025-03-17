@@ -30,12 +30,12 @@ const bookDisplay = document.querySelector(".bookdisplay");
 const addBookButton = document.querySelector(".calltoform")
 let form = document.querySelector("form");
 let formDiv = document.querySelector(".formcontainer");
-const myLibrary = [book1, book2, book3, book1, book2, book3,book1, book2, book3, book1, book2, book3];
+const myLibrary = [book1, book2, book3, book1, book2, book3, book1, book2, book3, book1, book2, book3];
 
 
 
-function showBookForm(){
-    if (formDiv.style.display === "none"){
+function showBookForm() {
+    if (formDiv.style.display === "none") {
         formDiv.style.display = "block";
     } else {
         formDiv.style.display = "none";
@@ -82,22 +82,34 @@ function loadBooks() {
         const createBookCard = document.createElement("div");
         createBookCard.className = "bookcard";
         bookDisplay.appendChild(createBookCard);
-        
+
         // populates the informatino onto each card.
 
         const createTitle = document.createElement("h3")
-        createTitle.innerHTML= book.title
+        createTitle.innerHTML = `<strong>Title:</strong> ${book.title}`
         const createAuthor = document.createElement("p")
-        createAuthor.innerHTML= book.author
+        createAuthor.innerHTML = `<strong>Author:</strong> ${book.author}`
         const createpages = document.createElement("p")
-        createpages.innerHTML= book.pages
+        createpages.innerHTML = `<strong>Pages:</strong> ${book.pages}`
         const createGenre = document.createElement("p")
-        createGenre.innerHTML= book.genre
+        createGenre.innerHTML = `<strong>Genre:</strong> ${book.genre}`
+        const createHaveRead = document.createElement("p")
+        createHaveRead.innerHTML = `<strong>Have read?:</strong> Not Yet!`
 
-        createBookCard.appendChild(createTitle)
-        createBookCard.appendChild(createAuthor)
-        createBookCard.appendChild(createpages)
-        createBookCard.appendChild(createGenre)
+        //buttons
+        const createReadButton = document.createElement("button")
+        createReadButton.innerHTML = "Toggle Read Status"
+        const createRemoveButton = document.createElement("button")
+        createRemoveButton.innerHTML = "Remove"
+
+
+        createBookCard.appendChild(createTitle);
+        createBookCard.appendChild(createAuthor);
+        createBookCard.appendChild(createpages);
+        createBookCard.appendChild(createGenre);
+        createBookCard.appendChild(createHaveRead);
+        createBookCard.appendChild(createReadButton);
+        createBookCard.appendChild(createRemoveButton);
 
     })
 }
