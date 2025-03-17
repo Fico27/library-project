@@ -30,9 +30,15 @@ const bookDisplay = document.querySelector(".bookdisplay");
 const addBookButton = document.querySelector(".calltoform")
 let form = document.querySelector("form");
 let formDiv = document.querySelector(".formcontainer");
-const myLibrary = [book1, book2, book3, book1, book2, book3, book1, book2, book3, book1, book2, book3];
+const myLibrary = [book1, book2, book3];
 
 
+
+function resetDisplay() {
+    while (bookDisplay.firstChild) {
+        bookDisplay.removeChild(bookDisplay.lastChild);
+    }
+}
 
 function showBookForm() {
     if (formDiv.style.display === "none") {
@@ -51,7 +57,9 @@ form.addEventListener("submit", (e) => {
     const addBookGenre = document.querySelector("#genre");
 
     addBookToLibrary(addBookTitle.value, addBookAuthor.value, addBookGenre.value, addBookPages.value);
-    loadBooks();
+
+    resetDisplay()
+    loadBooks()
     form.reset()
 })
 
@@ -85,23 +93,38 @@ function loadBooks() {
 
         // populates the informatino onto each card.
 
-        const createTitle = document.createElement("h3")
-        createTitle.innerHTML = `<strong>Title:</strong> ${book.title}`
-        const createAuthor = document.createElement("p")
-        createAuthor.innerHTML = `<strong>Author:</strong> ${book.author}`
-        const createpages = document.createElement("p")
-        createpages.innerHTML = `<strong>Pages:</strong> ${book.pages}`
-        const createGenre = document.createElement("p")
-        createGenre.innerHTML = `<strong>Genre:</strong> ${book.genre}`
-        const createHaveRead = document.createElement("p")
-        createHaveRead.innerHTML = `<strong>Have read?:</strong> Not Yet!`
+        const createTitle = document.createElement("h3");
+        createTitle.innerHTML = `<strong>Title:</strong> ${book.title}`;
+        const createAuthor = document.createElement("p");
+        createAuthor.innerHTML = `<strong>Author:</strong> ${book.author}`;
+        const createpages = document.createElement("p");
+        createpages.innerHTML = `<strong>Pages:</strong> ${book.pages}`;
+        const createGenre = document.createElement("p");
+        createGenre.innerHTML = `<strong>Genre:</strong> ${book.genre}`;
+        const createHaveRead = document.createElement("p");
+        createHaveRead.innerHTML = `<strong>Have read?:</strong> Not Yet!`;
 
         //buttons
-        const createReadButton = document.createElement("button")
-        createReadButton.innerHTML = "Toggle Read Status"
-        const createRemoveButton = document.createElement("button")
-        createRemoveButton.innerHTML = "Remove"
+        const createReadButton = document.createElement("button");
+        createReadButton.innerHTML = "Toggle Read Status";
+        createReadButton.className = "haveReadButton";
+        const createRemoveButton = document.createElement("button");
+        createRemoveButton.innerHTML = "Remove";
+        createRemoveButton.className = "removeButton";
 
+        //Removes each book
+        createRemoveButton.addEventListener('click', () => {
+            bookDisplay.removeChild(createBookCard)
+        });
+
+        // Toogles the have read paragraph
+        createReadButton.addEventListener('click', () => {
+            if(createHaveRead.innerHTML === `<strong>Have read?:</strong> Not Yet!`){
+                createHaveRead.innerHTML = `<strong>Have read?:</strong> Yes!`
+            } else {
+                createHaveRead.innerHTML = `<strong>Have read?:</strong> Not Yet!`
+            }
+        });
 
         createBookCard.appendChild(createTitle);
         createBookCard.appendChild(createAuthor);
@@ -113,5 +136,4 @@ function loadBooks() {
 
     })
 }
-
 
