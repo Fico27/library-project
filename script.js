@@ -43,13 +43,13 @@ function resetDisplay() {
 function showBookForm() {
     if (formDiv.style.display === "none") {
         formDiv.style.display = "block";
-        addBookButton.innerHTML= "Close Form"
+        addBookButton.innerHTML = "Close Form"
     } else {
-        
+
         formDiv.style.display = "none";
-        addBookButton.innerHTML= "Add Book"
+        addBookButton.innerHTML = "Add Book"
     }
-    
+
 }
 
 form.addEventListener("submit", (e) => {
@@ -69,12 +69,17 @@ form.addEventListener("submit", (e) => {
 
 
 // the constructor
-function Book(title, author, genre, pages) {
-    this.title = title,
-        this.author = author,
-        this.genre = genre,
-        this.pages = pages,
-        this.id = crypto.randomUUID();
+
+
+class Book {
+
+    constructor(title, author, genre, pages) {
+        this.title = title,
+            this.author = author,
+            this.genre = genre,
+            this.pages = pages,
+            this.id = crypto.randomUUID();
+    }
 }
 
 // Takes params to make a new book using the book constructor
@@ -118,14 +123,14 @@ function loadBooks() {
 
         //Removes each book
         createRemoveButton.addEventListener('click', () => {
-            
+
             myLibrary = myLibrary.filter(b => b.id !== book.id);
             bookDisplay.removeChild(createBookCard)
         });
 
         // Toogles the have read paragraph
         createReadButton.addEventListener('click', () => {
-            if(createHaveRead.innerHTML === `<strong>Have read?:</strong> Not Yet!`){
+            if (createHaveRead.innerHTML === `<strong>Have read?:</strong> Not Yet!`) {
                 createHaveRead.innerHTML = `<strong>Have read?:</strong> Yes!`
             } else {
                 createHaveRead.innerHTML = `<strong>Have read?:</strong> Not Yet!`
