@@ -97,3 +97,17 @@ label {
   padding: 10px 30px;
   border: 2px solid black;
 }
+
+.error {
+  width: 100%;
+  font-size: 90%;
+  font-weight: bold;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.active {
+  padding: 0.3rem;
+}
