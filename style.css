@@ -1,97 +1,99 @@
 html,
 body {
-    margin: 0;
-    background-color: #AA767C;
-    color: #63474D
+  margin: 0;
+  background-color: #aa767c;
+  color: #63474d;
 }
-button{
-    background-color: #FFA686;
-    font-weight: bold;
+button {
+  background-color: #ffa686;
+  font-weight: bold;
 }
 
 .maincontainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bookshelf {
-    display: flex;
-    flex-direction: column;
-    /* width: 80vw;
+  display: flex;
+  flex-direction: column;
+  /* width: 80vw;
     height: 80vh; */
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .bookdisplay {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto;
-
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .bookcard {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 400px;
-    border: 3px solid black;
-    text-align: center;
-    margin: 10px 10px;
-    padding: 10px;
-    align-items: center;
-    background-color: #FEC196;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 400px;
+  border: 3px solid black;
+  text-align: center;
+  margin: 10px 10px;
+  padding: 10px;
+  align-items: center;
+  background-color: #fec196;
 }
-.bookcard:hover{
-    box-shadow: 1px 1px 5px 1px #63474D;
-    
+.bookcard:hover {
+  box-shadow: 1px 1px 5px 1px #63474d;
 }
 
 .bookcard button {
-    width: 50%;
-    padding: 10px 0;
+  width: 50%;
+  padding: 10px 0;
 }
 
 .bookcard button:last-child {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .formcontainer {
-    display: none;
+  display: none;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    border: 2px solid black;
-    padding: 20px 20px;
-    align-items: center;
-    margin-top: 15px;
-    box-shadow: 5px 5px 50px 1px silver;
-    background-color: #FEC196;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 2px solid black;
+  padding: 20px 20px;
+  align-items: center;
+  margin-top: 15px;
+  box-shadow: 5px 5px 50px 1px silver;
+  background-color: #fec196;
 }
 
 form label {
-    padding-top: 10px;
-    font-weight: bold;
+  padding-top: 10px;
+  font-weight: bold;
 }
 
 form button {
-    padding: 10px;
-    margin-top: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
 }
 
 label {
-    display: block;
+  display: block;
 }
 
 .calltoform {
-    padding: 10px 30px;
-    border: 2px solid black;
+  padding: 10px 30px;
+  border: 2px solid black;
 }
